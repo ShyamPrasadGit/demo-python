@@ -1,20 +1,29 @@
 {% extends 'base.html' %}
 {% block body %}
 
+<style>
+    .custom-card {
+        width: 100%; /* Set the card width to 100% */
+        max-width: 28rem; /* Set the maximum card width to 28rem */
+        height: 100%; /* Allow the height to adjust automatically based on content */
+    }
+</style>
+
 <div class="container">
-     <div class="row">
-         {% for i in movie_list %}
+    <div class="row">
+        {% for i in movie_list %}
         <div class="col-md-3">
-            <div class="card" style="margin-right: 10px;" style="width: 28rem;" >
-  <img src="{{i.img.url}}" class="card-img-top" alt=" "  height="300" >
-  <div class="card-body">
-    <h5 class="card-title">{{i.name}}</h5>
-    <p class="card-text">{{i.desc}}</p>
-    <a href="{% url  'movieapp:detail' i.id %}" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
+            <div class="card custom-card"> <!-- Add the custom-card class here -->
+                <img src="{{i.img.url}}" class="card-img-top" alt=" " height="300">
+                <div class="card-body">
+                    <h5 class="card-title">{{i.name}}</h5>
+                    <p class="card-text">{{i.desc}}</p>
+                    <a href="{% url 'movieapp:detail' i.id %}" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
         </div>
-         {% endfor %}
-     </div>
+        {% endfor %}
+    </div>
 </div>
-    {% endblock %}
+
+{% endblock %}

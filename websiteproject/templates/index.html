@@ -1,14 +1,14 @@
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
-<title>About us</title>
+<title>Index</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Travello template project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
-<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css ">
 <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
@@ -27,19 +27,18 @@
 				<div class="col">
 					<div class="header_content d-flex flex-row align-items-center justify-content-start">
 						<div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
-							<div class="logo"><a href="index.html">Travello</a></div>
+							<div class="logo"><a href="index.html">My site</a></div>
 							<nav class="main_nav">
 								<ul class="d-flex flex-row align-items-start justify-content-start">
 									<li><a href="index.html">Home</a></li>
-									<li class="active"><a href="about.html">Hello {{user.username}}</a></li>
-									{% if user.is.authenticated %}
-<!--									<li> Hello {{user.username}}</li>-->
+									<li class="active"><a href="about.html">About us</a></li>
+									{% if user.is_authenticated %}
+									<li>Hello {{user.username}}</li>
 									<li><a href="credentials/logout">Logout</a></li>
-									<li> Hello {{user.username}}</li>
 									{% else %}
 									<li><a href="credentials/register">Register</a></li>
 									<li><a href="credentials/login">Login</a></li>
-									{% endif %}
+                                    {% endif %}
 								</ul>
 							</nav>
 							<div class="header_phone ml-auto">Call us: 00-56 445 678 33</div>
@@ -99,7 +98,7 @@
 	<!-- Home -->
 
 	<div class="home">
-		<div class="{% static 'background_image' %}" style="{% static 'background-image:url(images/about.jpg)' %}"></div>
+		<div class="background_image" style="background-image:url({% static 'images/about.jpg' %})"></div>
 	</div>
 
 	<!-- Search -->
@@ -216,6 +215,7 @@
 				<!-- Why item -->
 				{% for i in result %}
 				<div class="col-lg-4 why_col">
+				<div class="card" style="margin-bottom: 40px; height: 650px;">
 					<div class="why_item">
 						<div class="why_image">
 							<img src="{{i.img.url}}" alt="">
@@ -223,7 +223,7 @@
 								<img src="{% static 'images/why_1.svg' %}" alt="">
 							</div>
 						</div>
-						<div class="why_content text-center">
+						<div class="why_content text-center" style="height:165px;">
 							<div class="why_title">{{i.name}}</div>
 							<div class="why_text">
 								<p>{{i.desc}}</p>
@@ -231,49 +231,49 @@
 						</div>
 					</div>
 				</div>
+				</div>
 				{% endfor %}
 				<!-- Why item -->
-				<div class="col-lg-4 why_col">
-					<div class="why_item">
-						<div class="why_image">
-							<img src="{% static 'images/why_2.jpg' %}" alt="">
-							<div class="why_icon d-flex flex-column align-items-center justify-content-center">
-								<img src="{% static 'images/why_2.svg' %}" alt="">
-							</div>
-						</div>
-						<div class="why_content text-center">
-							<div class="why_title">Great Team</div>
-							<div class="why_text">
-								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo.</p>
-							</div>
-						</div>
-					</div>
-				</div>
+<!--				<div class="col-lg-4 why_col">-->
+<!--					<div class="why_item">-->
+<!--						<div class="why_image">-->
+<!--							<img src="{% static 'images/why_2.jpg' %}" alt="">-->
+<!--							<div class="why_icon d-flex flex-column align-items-center justify-content-center">-->
+<!--								<img src="{% static 'images/why_2.svg' %}" alt="">-->
+<!--							</div>-->
+<!--						</div>-->
+<!--						<div class="why_content text-center">-->
+<!--							<div class="why_title">Great Team</div>-->
+<!--							<div class="why_text">-->
+<!--								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo.</p>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
 
 				<!-- Why item -->
-				<div class="col-lg-4 why_col">
-					<div class="why_item">
-						<div class="why_image">
-							<img src="{% static 'images/why_3.jpg' %}" alt="">
-							<div class="why_icon d-flex flex-column align-items-center justify-content-center">
-								<img src="{% static 'images/why_3.svg' %}" alt="">
-							</div>
-						</div>
-						<div class="why_content text-center">
-							<div class="why_title">Best Deals</div>
-							<div class="why_text">
-								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo.</p>
-							</div>
-						</div>
-					</div>
-				</div>
+<!--				<div class="col-lg-4 why_col">-->
+<!--					<div class="why_item">-->
+<!--						<div class="why_image">-->
+<!--							<img src="{% static 'images/why_3.jpg' %}" alt="">-->
+<!--							<div class="why_icon d-flex flex-column align-items-center justify-content-center">-->
+<!--								<img src="{% static 'images/why_3.svg' %}" alt="">-->
+<!--							</div>-->
+<!--						</div>-->
+<!--						<div class="why_content text-center">-->
+<!--							<div class="why_title">Best Deals</div>-->
+<!--							<div class="why_text">-->
+<!--								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo.</p>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
 
 			</div>
 		</div>
 	</div>
 
 	<!-- Team -->
-
 
 	<div class="team">
 		<div class="container">
@@ -284,8 +284,9 @@
 				</div>
 			</div>
 			<div class="row team_row">
-				{% for i in result %}
+
 				<!-- Team Item -->
+				{% for i in result1 %}
 				<div class="col-xl-3 col-md-6 team_col">
 					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
 						<div class="team_image"><img src="{{i.img.url}}" alt=""></div>
@@ -299,43 +300,43 @@
 				</div>
 				{% endfor %}
 				<!-- Team Item -->
-				<div class="col-xl-3 col-md-6 team_col">
-					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
-						<div class="team_image"><img src="{% static 'images/team_2.jpg' %}" alt=""></div>
-						<div class="team_content">
-							<div class="team_title"><a href="#">James Williams</a></div>
-							<div class="team_text">
-								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.</p>
-							</div>
-						</div>
-					</div>
-				</div>
+<!--				<div class="col-xl-3 col-md-6 team_col">-->
+<!--					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">-->
+<!--						<div class="team_image"><img src="{% static 'images/team_2.jpg' %}" alt=""></div>-->
+<!--						<div class="team_content">-->
+<!--							<div class="team_title"><a href="#">James Williams</a></div>-->
+<!--							<div class="team_text">-->
+<!--								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.</p>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
 
 				<!-- Team Item -->
-				<div class="col-xl-3 col-md-6 team_col">
-					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
-						<div class="team_image"><img src="{% static 'images/team_3.jpg' %}" alt=""></div>
-						<div class="team_content">
-							<div class="team_title"><a href="#">Michael James</a></div>
-							<div class="team_text">
-								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.</p>
-							</div>
-						</div>
-					</div>
-				</div>
+<!--				<div class="col-xl-3 col-md-6 team_col">-->
+<!--					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">-->
+<!--						<div class="team_image"><img src="{% static 'images/team_3.jpg' %}" alt=""></div>-->
+<!--						<div class="team_content">-->
+<!--							<div class="team_title"><a href="#">Michael James</a></div>-->
+<!--							<div class="team_text">-->
+<!--								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.</p>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
 
 				<!-- Team Item -->
-				<div class="col-xl-3 col-md-6 team_col">
-					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
-						<div class="team_image"><img src="{% static 'images/team_4.jpg' %}" alt=""></div>
-						<div class="team_content">
-							<div class="team_title"><a href="#">Noah Smith</a></div>
-							<div class="team_text">
-								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.</p>
-							</div>
-						</div>
-					</div>
-				</div>
+<!--				<div class="col-xl-3 col-md-6 team_col">-->
+<!--					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">-->
+<!--						<div class="team_image"><img src="{% static 'images/team_4.jpg' %}" alt=""></div>-->
+<!--						<div class="team_content">-->
+<!--							<div class="team_title"><a href="#">Noah Smith</a></div>-->
+<!--							<div class="team_text">-->
+<!--								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.</p>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
 
 			</div>
 		</div>
@@ -430,8 +431,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="{% static 'plugins/greensock/animation.gsap.min.js' %}"></script>
 <script src="{% static 'plugins/greensock/ScrollToPlugin.min.js' %}"></script>
 <script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
-<script src="{% static 'plugins/easing/easing.js"></script>
+<script src="{% static 'plugins/easing/easing.js' %}"></script>
 <script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
-<script src="{% static 'js/about.js"></script>
+<script src="{% static 'js/about.js' %}"></script>
 </body>
 </html>

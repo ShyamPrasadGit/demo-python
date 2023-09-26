@@ -11,8 +11,10 @@
 <!-- Just an image -->
 <nav class="navbar navbar-dark bg-dark">
   <a class="navbar-brand" href="#">
-      online movie sore
+      Online Movie Store
   </a>
+  <!-- Add Movie Button -->
+  <a href="{% url 'movieapp:add_movie' %}" class="btn btn-primary">Add Movie</a>
 </nav>
 {% block body %}
 {% endblock %}

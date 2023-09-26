@@ -1,21 +1,16 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-
-  <style>
-    body {
-      background-image: url('https://images.unsplash.com/photo-1511721056697-23a0a89066de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80');
-    }
-  </style>
+    <title>Login</title>
 </head>
-
-<body>
+<h1 style="background-color:powderblue;font-family:courier;font-size:60px;">Login:</h1>
+<body style="background-image: url({% static 'images/login.jpg' %});background-size:100% 100%;text-align:center;">
 <form action="login" method="post">
     {% csrf_token %}
-    <input type="text" name="username" placeholder="Enter username";><br>
-    <input type="password" name="password" placeholder="Emter password"><br>
+    <input type="text" name="username" placeholder="Enter your User name"><br>
+    <input type="password" name="password" placeholder="Enter your Password"><br>
     <input type="submit">
 </form>
 </body>

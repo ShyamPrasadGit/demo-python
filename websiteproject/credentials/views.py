@@ -14,7 +14,7 @@ def login(request):
             return redirect('/')
         else:
             messages.info(request,"Invalid credentials")
-            return redirect('login')
+            return render(request,'invalidlogin.html')
     return render(request,'login.html')
 def register(request):
     if request.method == 'POST':

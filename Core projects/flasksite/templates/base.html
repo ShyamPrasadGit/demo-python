@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>book</title>
+
+
+
+    <link rel="stylesheet" herf="{{ url_for('static',filename='style.css')}}">
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Book Store</a>
+{% block body %}
+{% endblock %}
+</body>
+</html>

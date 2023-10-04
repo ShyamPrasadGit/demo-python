@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <header>
+    <h1>School Store</h1>
+    <title>form</title>
+</header>
+
+</head>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Store</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <!-- Add any additional styling or link to CSS files here -->
+</head>
+<body>
+
+
+<nav>
+    <a href="{% url 'demo' %}">Home</a>
+
+</nav>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://www.robertsonconstruction.net/wp-content/uploads/2022/11/Minerva-France-Elementary-018-750x750.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(102, 51, 153, 0.9); /* Use RGBA with alpha value 0.9 for 90% opacity */
+    color: #191970;
+}
+
+header {
+    background-color: rgba(57, 34, 51, 0.5); /* 0.5 for 50% transparency */
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+header {
+    background-color: rgba(57, 34, 51, 0.5); /* 0.5 for 50% transparency */
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+        nav {
+            background-color: #008080;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .container {
+            margin: 20px;
+        }
+
+        .button {
+            padding: 10px;
+            background-color: #191970;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-container {
+            display: none;
+        }
+
+</style>
+
+
+
+    <li><h2>Hello {{user.username}}</h2></li>
+
+<h2>Order Form</h2>
+
+<form action="{% url 'submit_order' %}" method="post">
+    {% csrf_token %}
+
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br><p>
+
+    <label for="dob">DOB:</label>
+    <input type="date" id="dob" name="dob" required><br><p>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required><br><p>
+
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option><p>
+        <!-- Add more options if needed -->
+    </select><br><p>
+
+    <label for="phone">Phone Number:</label><br>
+    <input type="tel" id="phone" name="phone" required><br><p>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br></p>
+
+    <label for="address">Address:</label><br>
+    <textarea id="address" name="address" required></textarea><br>
+
+<label for="department">Department:</label>
+<select id="department" name="department" required>
+    <optgroup label="Science">
+        <option value="biology">Biology</option>
+        <option value="Pysics">Physics</option>
+        <option value="chemistry">Chemistry</option>
+    <optgroup label="Commerce">
+        <option value="bba">BBA</option>
+        <option value="bcom">B.Com</option>
+        <!-- Add more sub-options if needed -->
+    </optgroup>
+    <!-- Add more departments if needed -->
+</select>
+
+        <!-- Add more options if needed -->
+    </select><br><p>
+
+<!--    <label for="course">Courses:</label>-->
+    <!-- Add dependent dropdown options based on the selected department -->
+
+    <label for="purpose">Purpose:</label>
+    <select id="purpose" name="purpose" required>
+        <option value="enquiry">For Enquiry</option>
+        <option value="order">Place Order</option>
+        <option value="return">Return</option>
+        <!-- Add more options if needed -->
+    </select><br><p>
+
+    <label>Materials Provide:</label><br>
+    <input type="checkbox" id="debt_notebook" name="materials[]" value="debt_notebook">
+    <label for="debt_notebook">Debt notebook</label><br>
+    <input type="checkbox" id="pen" name="materials[]" value="pen">
+    <label for="pen">Pen</label><br>
+    <input type="checkbox" id="exam_papper" name="materials[]" value="exam_papper">
+    <label for="exam_papper">Exam papper</label><br>
+    <!-- Add more checkboxes for other materials -->
+
+    <button type="submit">Submit</button>
+</form>
+
+<div class="container">
+
+  <button> <a href="logout" class="button" onclick="#">Logout</a></button>
+
+</div>
+</body>
+</html>
